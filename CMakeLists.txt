@@ -6,4 +6,4 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(P1___train_vs_planes
-        data_read.c)
+        travel_cal.c)
