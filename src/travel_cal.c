@@ -25,7 +25,7 @@ double data_reader () {
     FILE *in_file;
 
     // Here the fil is opened.
-    in_file = fopen("data.txt", "w+"); // read only
+    in_file = fopen("data.txt", "r"); // read only
 
     // test for files not existing.
     if (in_file == NULL) {
@@ -43,13 +43,15 @@ double data_reader () {
         }
         else {
             printf("you are great\n");
-            char str1[10], str2[10];
-            int year;
-            fscanf(in_file, "%s,%s,%d", str1,str2,&year);
+            int year[4];
+            char route[10];
+            for (int i = 0; i < 4 ; ++i) {
+                fscanf(in_file, "%s %d",route,&year[i]);
+                printf("%d Read Integer %s|%d|\n",i,route, year[i]);
+            }
 
-            printf("Read String1 |%s|\n", str1 );
-            printf("Read String2 |%s|\n", str2 );
-            printf("Read Integer |%d|\n", year );
+
+
         }
 
 
