@@ -1,18 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 
-typedef struct{
-    int start_loc;
-    int time;
-    int end_loc;
-} travel_time_t;
-
-typedef struct {
-    travel_time_t travel_time;
-    struct node_t* next;
-}node_t;
 
 
 double data_reader ();
@@ -34,29 +23,52 @@ double data_reader () {
     } else {
         printf("it worked\n");
 
-        node_t* new_node = (node_t*) malloc(sizeof(node_t));
 
-        //Test if memory is allocated
-        if (new_node == NULL) {
-            printf("Memory not allocated.\n");
-            exit(EXIT_FAILURE);
+        int size_of_arry;
+        printf("Please enter the amount of cities, you want to see: \n");
+        scanf("%d", &size_of_arry);
+        printf("%d\n", size_of_arry);
+
+        int start, end, time;
+        int time_array[size_of_arry][size_of_arry];
+
+        for (int i = 0; i < size_of_arry; ++i) {
+            for (int j = 0; j < size_of_arry; ++j) {
+                time_array[i][j] = 0;
+            }
         }
-        else {
-            printf("you are great\n");
-            int year[4];
-            char route[10];
-            for (int i = 0; i < 4 ; ++i) {
-                fscanf(in_file, "%s %d",route,&year[i]);
-                printf("%d Read Integer %s|%d|\n",i,route, year[i]);
+
+/*
+            for (int i = 0; i < size_of_arry; ++i) {
+                for (int j = 0; j < size_of_arry; ++j) {
+                    fscanf(in_file, "%d,%d,%d",&start,&end, &time_array[start][end]);
+                }
+            }
+            for (int i = 0; i < size_of_arry; ++i) {
+            fscanf(in_file, "%d,%d,%d", &start, &end, &time);
+            time_array[start][end] = time;
+            printf("Read Integer %d|%d|%d\n", start, end, time);
+        }
+    */
+
+
+            while(fscanf(in_file, "%d,%d,%d",&start,&end, &time) != EOF){
+                fscanf(in_file, "%d,%d,%d",&start,&end, &time);
+                printf("Read Integer %d|%d|%d\n", start, end, time);
+                time_array[start][end] = time;
             }
 
 
 
+
+
+
+        for (int i = 0; i < size_of_arry; ++i) {
+            printf("\n");
+            for (int j = 0; j < size_of_arry; ++j) {
+                printf("%d ", time_array[i][j]);
+            }
         }
-
-
-
-
 
 
     }
