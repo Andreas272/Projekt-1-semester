@@ -4,9 +4,9 @@
 
 
 
-
-double data_reader (int time_array[x][x],int size_of_array) {
+double data_reader (int time_array[array_size][array_size],int size_of_array) {
     FILE *in_file;
+
 
     // Here the fil is opened.
     in_file = fopen("data.txt", "r"); // read only
@@ -46,7 +46,7 @@ int size_of_array(){
     return size_of_array;
 }
 
-void print_array(int time_array[x][x],int size_of_array){
+void print_array(int time_array[array_size][array_size],int size_of_array){
     for (int i = 0; i < size_of_array; ++i) {
         printf("\n");
         for (int j = 0; j < size_of_array; ++j) {
