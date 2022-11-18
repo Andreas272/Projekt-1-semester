@@ -7,7 +7,7 @@
 
 extern int array_size;
 
-double data_reader (int time_array[array_size][array_size],int size_of_array);
+void data_reader (int time_array[array_size][array_size],int size_of_array);
 int size_of_array();
 void print_array(int time_array[array_size][array_size],int size_of_array);
 
