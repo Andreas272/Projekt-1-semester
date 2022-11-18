@@ -28,8 +28,9 @@ void data_reader (int time_array[array_size][array_size],int size_of_array) {
                 time_array[i][j] = 0;
             }
         }
-        //These variabels
+        //These variables is for the imputing the data into the array
         int start, end, time;
+
         //scans through the whole file, and fills in the raouts, and the time is takes
         //based on the starting point, and ending point.
         while(fscanf(in_file, "%d,%d,%d",&start,&end, &time) != EOF){

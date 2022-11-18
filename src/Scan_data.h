@@ -5,6 +5,7 @@
 #ifndef P1___TRAIN_VS_PLANES_SCAN_DATA_H
 #define P1___TRAIN_VS_PLANES_SCAN_DATA_H
 
+//Makes the variable usable in other files that have included Scan_data.h//
 extern int array_size;
 
 void data_reader (int time_array[array_size][array_size],int size_of_array);
