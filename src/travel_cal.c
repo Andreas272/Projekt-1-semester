@@ -2,8 +2,6 @@
 #include <stdlib.h>
 
 
-
-
 double data_reader ();
 
 int main(void) {
@@ -38,28 +36,13 @@ double data_reader () {
             }
         }
 
-/*
-            for (int i = 0; i < size_of_arry; ++i) {
-                for (int j = 0; j < size_of_arry; ++j) {
-                    fscanf(in_file, "%d,%d,%d",&start,&end, &time_array[start][end]);
-                }
-            }
-            for (int i = 0; i < size_of_arry; ++i) {
-            fscanf(in_file, "%d,%d,%d", &start, &end, &time);
-            time_array[start][end] = time;
-            printf("Read Integer %d|%d|%d\n", start, end, time);
-        }
-    */
 
 
             while(fscanf(in_file, "%d,%d,%d",&start,&end, &time) != EOF){
-                fscanf(in_file, "%d,%d,%d",&start,&end, &time);
+                //fscanf(in_file, "%d,%d,%d",&start,&end, &time);
                 printf("Read Integer %d|%d|%d\n", start, end, time);
-                time_array[start][end] = time;
+                time_array[start-1][end-1] = time;
             }
-
-
-
 
 
 
