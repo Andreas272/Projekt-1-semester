@@ -66,7 +66,33 @@ void print_array(int time_array[array_size][array_size],int size_of_array){
     for (int i = 0; i < size_of_array; ++i) {
         printf("\n");
         for (int j = 0; j < size_of_array; ++j) {
-            printf("%d ", time_array[i][j]);
+            printf("%d  ", time_array[i][j]);
         }
     }
+}
+
+int file_array_size(){
+    int start, end, discard, file_array_size = 0;
+    FILE *in_file;
+    in_file = fopen("data.txt", "r"); // Opens the file data.txt in read only mode.
+    if (in_file == NULL) {
+        printf("Error! Could not open file\n"); exit(EXIT_FAILURE);
+    }
+    else {
+        while(fscanf(in_file, "%d,%d,%d",&start,&end, &discard) != EOF){
+            int i = 0, j = 0;
+            i = compere_int(start,end);
+            j = compere_int(i,file_array_size);
+            file_array_size = j;
+        }
+    }
+    return file_array_size;
+    fclose(in_file); //Here we close the file back down again.
+}
+
+int compere_int(int a, int b){
+    if(a > b)
+        return a;
+    else
+        return b;
 }
