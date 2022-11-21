@@ -1,8 +1,60 @@
 #include "route_cal.h"
 #include <stdio.h>
+#include <limits.h>
+#include "Scan_data.h"
 
+
+int route_cal(int array[array_size][array_size], int size_of_array, int start, int end){
+
+    int result_array[array_size];
+
+    //This for loop is filling the array with high numbers,
+    //so that we are sure its bigger then the results that go here later
+    for (int i = 0; i < array_size; ++i) {
+        result_array[i] = 100;
+    }
+   //We know that it takes 0 time to get the start station.
+    result_array[start] = 0;
+
+    //printf("\n");
+    //printf("\n");
+
+    for (int r = 0; r < 2; ++r) {
+        for (int i = 0; i < array_size; ++i) {
+            for (int j = 0; j < array_size; ++j) {
+                if (array[i][j] > 0 && array[i][j] + result_array[i] < result_array[j]) {
+                    result_array[j] = result_array[i] + array[i][j];
+                    //printf("%d ", result_array[j]);
+                }
+                    //printf("0 ");
+            }
+            //printf("\n");
+
+        }
+    }
+
+
+    printf("\nTime to end stations > %d",result_array[end]);
+
+
+    /*
+    for (int i = 0; i < array_size; ++i) {
+        printf("\n%d ",result_array[i]);
+    }
+*/
+}
+
+
+
+
+
+
+
+
+/*
 //Number of cities
 #define C 3
+
 
 int is_j_in_no_loop_array (double array[C], int j);
 double journey_simulator(double network_matrix[C][C], int star, int end);
@@ -73,7 +125,4 @@ int is_j_in_no_loop_array (double array[C], int j){
         return 0;
 }
 
-
-
-
-
+*/
