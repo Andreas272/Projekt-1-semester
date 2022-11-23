@@ -5,7 +5,7 @@
 
 
 
-int route_cal(int array[array_size][array_size], int size_of_array, int start, int end){
+int route_cal(int array[array_size][array_size], int start, int end){
 
     int result_array[array_size];
 
@@ -34,8 +34,17 @@ int route_cal(int array[array_size][array_size], int size_of_array, int start, i
         }
     }
 
-
     printf("\nTime to end stations > %d",result_array[end]);
+
+
+
+
+
+
+
+
+
+
 
 
     /*
@@ -44,12 +53,6 @@ int route_cal(int array[array_size][array_size], int size_of_array, int start, i
     }
 */
 }
-
-
-
-
-
-
 
 
 /*

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "Scan_data.h"
 #include "route_cal.h"
 #include "user_inputs.h"
@@ -8,8 +7,8 @@
 int array_size = 0;
 
 int main(void) {
+    int departure, arrival; //variables for the starting and ending city
 
-    int departure, arrival;
     //Takes inputs from user of starting city and destination city
     user_inputs(&departure, &arrival);
 
@@ -28,8 +27,8 @@ int main(void) {
     //Prints the array
     print_array(time_array,array_size);
 
-
-    route_cal(time_array, array_size, departure - 1, arrival - 1);
+    //Calculation of the shortest route in the train network
+    route_cal(time_array, departure - 1, arrival - 1);
 
     return 0;
 }
