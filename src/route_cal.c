@@ -4,6 +4,7 @@
 #include "Scan_data.h"
 
 
+
 int route_cal(int array[array_size][array_size], int size_of_array, int start, int end){
 
     int result_array[array_size];
