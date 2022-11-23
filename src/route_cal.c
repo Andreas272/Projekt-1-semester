@@ -84,7 +84,7 @@ void m2() {
  * @param start is the starting node. it is from this node the function runs.
  * @param end is the finishing node. When the function has found its way to end, it stops
  * @return The function returns the durations of all unique routes from start to end.
- */
+
 double journey_simulator(double network_matrix[C][C], int start, int end){
     double no_loop_array[C]={0,0,0};
 
@@ -124,7 +124,7 @@ double journey_simulator(double network_matrix[C][C], int start, int end){
  * @param array is a one-dimensional array passed.
  * @param j is searched for in array by the function
  * @return Either true(1), if j is found in the array or false(0) if element j is not found.
- */
+
 int is_j_in_no_loop_array (double array[C], int j){
     int i = 0;
 

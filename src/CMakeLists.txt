@@ -6,6 +6,6 @@ set(CMAKE_C_STANDARD 11)
 include_directories(.)
 
 add_executable(P1___train_vs_planes
-        main.c Scan_data.c Scan_data.h route_cal.c route_cal.h)
+        main.c Scan_data.c Scan_data.h route_cal.c route_cal.h user_inputs.h user_inputs.cpp)
 
 link_libraries(main.c Scan_data.c Scan_data.h route_cal.c route_cal.h)
