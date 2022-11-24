@@ -22,8 +22,6 @@ int main(void) {
     //Inputs the data form the data.txt file into the 2d array.
     data_reader (time_array,array_size);
 
-
-
     //Prints the array
     print_array(time_array,array_size);
 
