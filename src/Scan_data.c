@@ -20,7 +20,7 @@ void data_reader (int time_array[array_size][array_size],int size_of_array) {
         printf("Error! Could not open file\n");
         exit(EXIT_FAILURE); // must include stdlib.h
     } else {
-        printf("The file was found, you did good son!!!\n");
+        printf("\nThe file was found, you did good son!!!\n");
 
         //This for loop, fills the array with 0's, such that we know later, which routes is unusable.
         for (int i = 0; i < size_of_array; ++i) {
