@@ -9,9 +9,9 @@
  * @param arrival is the destination in the network
  */
 void user_inputs (int *departure, int *arrival) {
-    printf("\nInput user starting city");
+    printf("\nInput user starting city>");
     scanf("%d", departure);
 
-    printf("Input user destination");
+    printf("Input user destination>");
     scanf("%d", arrival);
 }
