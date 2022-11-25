@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include "Scan_data.h"
 
-
-
 void route_extractor(int previous_array[], int end, int route[array_size])
 {
     int x;
@@ -33,9 +31,9 @@ for(int i=0; i<array_size;i++){
 
 int route_cal(int array[array_size][array_size], int start, int end) {
 
-    printf("\nStart is: %d\n", start+1);
-    printf("End is: %d\n", end+1);
-    printf("Number of stations: %d\n\n", array_size);
+    printf("\nStart is %d\n", start+1);
+    printf("End is %d\n", end+1);
+    printf("Number of stations: %d\n", array_size);
 
 
     int result_array[array_size];
@@ -69,24 +67,14 @@ int route_cal(int array[array_size][array_size], int start, int end) {
                     previous_array[j] = (i + start) % array_size; //If you go from start to j, then the j's element of this array says were you would have come from in the final
                                                                   //  edge
 
-
-
-
-
-
                 }
-
             }
-
-
         }
     }
 
-
     route_extractor(previous_array, end, route_array);
 
-    printf("Time to end stations: %d\n", result_array[end]);
-
+    printf("Time to reach end station ny train: %d\n", result_array[end]);
 
     return result_array[end];
 
