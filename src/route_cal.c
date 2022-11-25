@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include "Scan_data.h"
 
-void route_extractor(int previous_array[], int end, int route[array_size])
-{
+void route_extractor(int previous_array[], int end, int route[array_size]){
     int x;
-for(int i=0; i<array_size;i++){
+
+    for(int i=0; i<array_size;i++){
     if(i==0){
         route[i]=end;
     }
@@ -13,9 +13,10 @@ for(int i=0; i<array_size;i++){
         x = route[i - 1];
         route[i] = previous_array[x];
     }
-
 }
-    printf("The route_extractor route:[ ");
+
+    printf("The fastest route is [ ");
+
     for (int i=array_size-1;0 <= i;i--)
     {
         if(route[i] != route[i+1]) {
@@ -24,9 +25,10 @@ for(int i=0; i<array_size;i++){
                 printf("-> ");
             }
         }
-
     }
+
     printf("]\n");
+
 }
 
 int route_cal(int array[array_size][array_size], int start, int end) {
@@ -61,7 +63,6 @@ int route_cal(int array[array_size][array_size], int start, int end) {
                     array[(i + start) % array_size][j] + result_array[(i + start) % array_size] <
                     result_array[j]) {
 
-
                     result_array[j] = result_array[(i + start) % array_size] + array[(i + start) % array_size][j];
 
                     previous_array[j] = (i + start) % array_size; //If you go from start to j, then the j's element of this array says were you would have come from in the final
@@ -74,7 +75,7 @@ int route_cal(int array[array_size][array_size], int start, int end) {
 
     route_extractor(previous_array, end, route_array);
 
-    printf("Time to reach end station ny train: %d\n", result_array[end]);
+    printf("Time to reach end station by train: %d\n", result_array[end]);
 
     return result_array[end];
 
