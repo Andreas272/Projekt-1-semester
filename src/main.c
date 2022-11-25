@@ -31,7 +31,7 @@ int main(void) {
 
     //Calculation of the shortest route in the train network
     train_time = route_cal(time_array, departure - 1, arrival - 1);
-    printf("Time to end stations with plane: %lf", plane_time);
+    printf("Time to reach end station by plane: %lf", plane_time);
 
     travel_comparison(plane_time, train_time);
 
