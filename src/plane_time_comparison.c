@@ -4,7 +4,7 @@
 
 double plane_cal (int departure, int arrival){
     char start_airport, end_airport;
-    printf("choose 2 airports, (start airport) (end_airport)");
+    printf("Choose 2 airports (first start airport, then end airport)\n");
     printf("Here is the list of airports:\n(f)Frankfurt, (s)Stuttgart, (m)Munich\n");
     scanf(" %c %c", &start_airport, &end_airport);
 
@@ -29,9 +29,9 @@ void travel_comparison(double plane, int train) {
 
 
     if (plane < train) {
-        printf("\n\nThe plane is the fastest mean of travel at %lf h", plane);
+        printf("\n\nThe plane is the fastest means of travel at %lf h", plane);
     } else {
-        printf("\n\nThe train is the fastest mean of travel at %d h", train);
+        printf("\n\nThe train is the fastest means of travel at %d h", train);
     }
 
 }
