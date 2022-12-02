@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "Scan_data.h"
 
-void route_extractor(int previous_array[], int end, int route[array_size]){
+void route_extractor(int previous_array[], int end, int route[array_size], int start){
     int x;
 
     for(int i=0; i<array_size;i++){
@@ -15,7 +15,7 @@ void route_extractor(int previous_array[], int end, int route[array_size]){
     }
 }
 
-    printf("The fastest route is [ ");
+    printf("\nThe fastest route is [ %d -> ", start + 1);
 
     for (int i=array_size-1;0 <= i;i--)
     {
@@ -33,9 +33,9 @@ void route_extractor(int previous_array[], int end, int route[array_size]){
 
 int route_cal(int array[array_size][array_size], int start, int end) {
 
-    printf("\nStart is %d\n", start+1);
-    printf("End is %d\n", end+1);
-    printf("Number of stations: %d\n", array_size);
+    //printf("\nStart is %d\n", start+1);
+    //printf("End is %d\n", end+1);
+    //printf("Number of stations: %d\n", array_size);
 
 
     int result_array[array_size];
@@ -65,18 +65,60 @@ int route_cal(int array[array_size][array_size], int start, int end) {
 
                     result_array[j] = result_array[(i + start) % array_size] + array[(i + start) % array_size][j];
 
-                    previous_array[j] = (i + start) % array_size; //If you go from start to j, then the j's element of this array says were you would have come from in the final
-                                                                  //  edge
-
+                    previous_array[j] = (i + start) % array_size; //If you go from start to j, then the j's element of
+                                                                  // this array says were you would have come from in the final edge
                 }
             }
         }
     }
 
-    route_extractor(previous_array, end, route_array);
+    route_extractor(previous_array, end, route_array, start);
 
     printf("Time to reach end station by train: %d\n", result_array[end]);
 
     return result_array[end];
 
+}
+
+void change_route_time(int array[array_size][array_size]){
+
+    int start, end, change;
+
+    print_line();
+
+    printf("\n\nFrom with station do the route you want to change start?\n");
+    for (int i = 0; i < array_size; ++i) {
+        printf("%d  ", i + 1);
+    }
+    printf("\n\nChose on of the stations above > ");
+    scanf("%d", &start); start -= 1;
+
+    print_line();
+
+    printf("\n\nPick the end station for the route you wanner change\n");
+    for (int i = 0; i < array_size; ++i) {
+        if(array[start][i] != 0)
+            printf("%d  ", i + 1);
+    }
+    printf("\n\nChose on of the stations above > ");
+    scanf("%d", &end); end -= 1;
+
+    print_line();
+
+    printf("\n\nWhat do you want to change the travel duration on this route to?\n");
+    printf("The current time of the route is: %d\n", array[start][end]);
+    printf("\nInput the new travel duration > ");
+    scanf("%d", &change);
+
+    array[start][end] = change;
+    array[end][start] = change;
+
+    print_line();
+
+
+}
+
+
+void print_line(){
+    printf("\n\n___________________________________________________________");
 }

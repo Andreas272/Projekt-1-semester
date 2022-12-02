@@ -15,3 +15,11 @@ void user_inputs (int *departure, int *arrival) {
     printf("Input user destination>");
     scanf("%d", arrival);
 }
+
+int ask_for_change(){
+    int scan;
+    printf("\n\nDo you want to change the time of one of the routes?\n");
+    printf("Type 1 for yes or 0 for no:");
+    scanf("%d", &scan);
+    return scan;
+}
