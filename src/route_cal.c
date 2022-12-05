@@ -6,14 +6,14 @@ void route_extractor(int previous_array[], int end, int route[array_size], int s
     int x;
 
     for(int i=0; i<array_size;i++){
-    if(i==0){
-        route[i]=end;
+        if(i==0){
+            route[i]=end;
+        }
+        else {
+            x = route[i - 1];
+            route[i] = previous_array[x];
+        }
     }
-    else {
-        x = route[i - 1];
-        route[i] = previous_array[x];
-    }
-}
 
     printf("\nThe fastest route is [ %d -> ", start + 1);
 
@@ -66,7 +66,7 @@ int route_cal(int array[array_size][array_size], int start, int end) {
                     result_array[j] = result_array[(i + start) % array_size] + array[(i + start) % array_size][j];
 
                     previous_array[j] = (i + start) % array_size; //If you go from start to j, then the j's element of
-                                                                  // this array says were you would have come from in the final edge
+                    // this array says were you would have come from in the final edge
                 }
             }
         }
