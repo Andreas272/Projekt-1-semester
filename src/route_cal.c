@@ -1,21 +1,22 @@
 #include "route_cal.h"
 #include <stdio.h>
 #include "Scan_data.h"
+#include "user_inputs.h"
 
 void route_extractor(int previous_array[], int end, int route[array_size], int start){
     int x;
 
     for(int i=0; i<array_size;i++){
-    if(i==0){
-        route[i]=end;
+        if(i==0){
+            route[i]=end;
+        }
+        else {
+            x = route[i - 1];
+            route[i] = previous_array[x];
+        }
     }
-    else {
-        x = route[i - 1];
-        route[i] = previous_array[x];
-    }
-}
 
-    printf("\nThe fastest route is [ %d -> ", start + 1);
+    printf("\n\nThe fastest route is [ ");
 
     for (int i=array_size-1;0 <= i;i--)
     {
@@ -27,7 +28,7 @@ void route_extractor(int previous_array[], int end, int route[array_size], int s
         }
     }
 
-    printf("]\n");
+    printf("]\n\n");
 
 }
 
@@ -46,7 +47,7 @@ int route_cal(int array[array_size][array_size], int start, int end) {
     //This for loop is filling the array with high numbers,
     //so that we are sure its bigger then the results that go here later
     for (int i = 0; i < array_size; ++i) {
-        result_array[i] = 100;
+        result_array[i] = 100000;
         previous_array[i] = -1;
         route_array[i] = -1; //array for the route from A to B.
 
@@ -66,7 +67,7 @@ int route_cal(int array[array_size][array_size], int start, int end) {
                     result_array[j] = result_array[(i + start) % array_size] + array[(i + start) % array_size][j];
 
                     previous_array[j] = (i + start) % array_size; //If you go from start to j, then the j's element of
-                                                                  // this array says were you would have come from in the final edge
+                    // this array says were you would have come from in the final edge
                 }
             }
         }
@@ -74,19 +75,24 @@ int route_cal(int array[array_size][array_size], int start, int end) {
 
     route_extractor(previous_array, end, route_array, start);
 
-    printf("Time to reach end station by train: %d\n", result_array[end]);
+    int timer = result_array[end] / 60, min = result_array[end] % 60;
+    printf("Time to reach end station by train: %d:%d\n", timer, min);
 
     return result_array[end];
 
 }
 
+/**
+ * This function is for changing the different times in the time array
+ * @param array
+ */
 void change_route_time(int array[array_size][array_size]){
 
     int start, end, change;
 
     print_line();
 
-    printf("\n\nFrom with station do the route you want to change start?\n");
+    printf("\n\nFrom which station do the edge you want to change start?\n");
     for (int i = 0; i < array_size; ++i) {
         printf("%d  ", i + 1);
     }
@@ -105,8 +111,8 @@ void change_route_time(int array[array_size][array_size]){
 
     print_line();
 
-    printf("\n\nWhat do you want to change the travel duration on this route to?\n");
-    printf("The current time of the route is: %d\n", array[start][end]);
+    printf("\n\nWhat do you want to change the travel duration on this route to in minutes?\n");
+    printf("The current time of the route is: %d min\n", array[start][end]);
     printf("\nInput the new travel duration > ");
     scanf("%d", &change);
 
@@ -115,10 +121,8 @@ void change_route_time(int array[array_size][array_size]){
 
     print_line();
 
-
 }
 
-
 void print_line(){
-    printf("\n\n___________________________________________________________");
+    printf("\n\n____________________________________________________________________");
 }

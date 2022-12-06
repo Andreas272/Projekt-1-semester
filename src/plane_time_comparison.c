@@ -2,27 +2,27 @@
 #include "route_cal.h"
 
 
-double plane_cal(int departure, int arrival) {
+int plane_cal(int departure, int arrival) {
 
-    double plane_time = 0;
+    int plane_time = 0;
 
     // (0)Frankfurt, (1)Stuttgart, (2)Munich
     if (departure == 1 && arrival == 11 ||
         departure == 11 && arrival == 1) {
         int frank_munc = 300;
-        plane_time = 1.5 + (0.002103055473 * frank_munc);
+        plane_time = 115 + (0.2103055473 * frank_munc);
         return plane_time;
 
     } else if (departure == 1 && arrival == 6 ||
                departure == 6 && arrival == 1) {
         int frank_stutt = 157;
-        plane_time = 1.5 + (0.002103055473 * frank_stutt);
+        plane_time = 115 + (0.2103055473 * frank_stutt);
         return plane_time;
 
     } else if (departure == 11 && arrival == 6 ||
                departure == 6 && arrival == 11) {
         int munich_stutt = 193;
-        plane_time = 1.5 + (0.002103055473 * munich_stutt);
+        plane_time = 115 + (0.2103055473 * munich_stutt);
         return plane_time;
     }
     return plane_time;
@@ -42,13 +42,15 @@ scanf(" %c %c", &start_airport, &end_airport);
 
 
 
-void travel_comparison(double plane, int train) {
+void travel_comparison(int plane, int train) {
 
 
-    if (plane < train) {
-        printf("\n\nThe plane is the fastest means of travel at %lf h", plane);
+    if (plane < train && plane != 0) {
+        int timer = (plane/60), min = (plane % 60);
+        printf("\n\nThe plane is the fastest means of travel at %d:%d",timer, min);
     } else {
-        printf("\n\nThe train is the fastest means of travel at %d h", train);
+        int timer = train / 60, min = train % 60;
+        printf("\n\nThe train is the fastest means of travel at %d:%d", timer, min);
     }
 
 }
