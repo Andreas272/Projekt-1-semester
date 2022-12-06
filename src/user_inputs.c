@@ -16,10 +16,14 @@ void user_inputs (int *departure, int *arrival) {
     scanf("%d", arrival);
 }
 
-int ask_for_change(){
+int ask_action(){
     int scan;
-    printf("\n\nDo you want to change the time of one of the routes?\n");
-    printf("Type 1 for yes or 0 for no:");
+
+    printf("\n\nWhat do you want to do?\n");
+    printf("Exit program(0)\n");
+    printf("Rerun fastest route calculation(1)\n");
+    printf("Change route time(2)\n");
+    printf("Print time array(3)\n");
     scanf("%d", &scan);
     return scan;
 }
