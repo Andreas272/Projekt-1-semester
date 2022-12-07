@@ -76,7 +76,7 @@ int route_cal(int array[array_size][array_size], int start, int end) {
     route_extractor(previous_array, end, route_array, start);
 
     int timer = result_array[end] / 60, min = result_array[end] % 60;
-    printf("Time to reach end station by train: %d:%d\n", timer, min);
+    printf("Time to reach end station by train: %dh:%dmin\n", timer, min);
 
     return result_array[end];
 

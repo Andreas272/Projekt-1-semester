@@ -13,18 +13,23 @@ int main(void) {
     //Takes inputs from user of starting city and destination city
     user_inputs(&departure, &arrival);
 
-    //Enter places with airports (1 or 3 or 9)
-    plane_time = plane_cal(departure, arrival);
-
     //This function finds the array size.
     array_size = file_array_size();
 
-
-    //Creates the 2d array
+    //Creates the 2d array for trains
     int time_array[array_size][array_size];
 
-    //Inputs the data form the data.txt file into the 2d array.
+    //Creates the 2d array for planes
+    int plane_time_array[array_size][array_size];
+
+    //Reads the data form the data file into the 2d plane array.
+    plane_reader(plane_time_array,array_size);
+
+    //Reads the data form the data file into the 2d array.
     data_reader (time_array,array_size);
+
+    //Enter places with airports (1 or 6 or 11)
+    plane_time = plane_route_cal(plane_time_array,departure - 1,arrival - 1);
 
 
 
@@ -36,7 +41,7 @@ int main(void) {
 
             if (plane_time > 0) {
                 int timer = (plane_time / 60), min = (plane_time % 60);
-                printf("Time to reach end station by plane: %d:%d", timer, min);
+                printf("Time to reach end station by plane: %dh:%dmin", timer, min);
             } else
                 printf("There is no flights between these stations.");
 
