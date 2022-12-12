@@ -1,4 +1,4 @@
-
+#include "route_cal.h"
 #include "user_inputs.h"
 #include <stdio.h>
 
@@ -16,14 +16,21 @@ void user_inputs (int *departure, int *arrival) {
     scanf("%d", arrival);
 }
 
+
+/**
+ * Ask the user for the next action.
+ * @return the user input in the form of an int.
+ */
 int ask_action(){
     int scan;
-
-    printf("\n\nWhat do you want to do?\n");
-    printf("Exit program(0)\n");
-    printf("Rerun fastest route calculation(1)\n");
-    printf("Change route time(2)\n");
-    printf("Print time array(3)\n");
+    print_line();
+    printf("What do you want to do?\n");
+    printf("\tExit program(0)\n");
+    printf("\tRerun fastest route calculation(1)\n");
+    printf("\tChange route time(2)\n");
+    printf("\tPrint time array(3)\n");
+    printf(">");
     scanf("%d", &scan);
+
     return scan;
 }

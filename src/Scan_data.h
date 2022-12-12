@@ -10,7 +10,6 @@ extern int array_size;
 int compere_int(int a, int b);
 int file_array_size();
 void data_reader (int time_array[array_size][array_size],int size_of_array);
-int size_of_array();
 void print_array(int time_array[array_size][array_size],int size_of_array);
 void plane_reader (int time_array[array_size][array_size],int size_of_array);
 
