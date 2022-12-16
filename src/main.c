@@ -7,8 +7,7 @@
 int array_size = 0;
 
 int main(void) {
-    int departure, arrival, train_time, ask = 1;
-    int plane_time;//variables for the starting and ending city
+    int departure, arrival, train_time, plane_time, ask = 1;
 
     //This function finds the array size.
     array_size = file_array_size();
