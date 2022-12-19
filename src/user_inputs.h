@@ -9,5 +9,7 @@
 //extern int start, end;
 void user_inputs(int *departure, int *arrival);
 int ask_action();
+int ask_units();
+int data_selector();
 
 #endif //P1___TRAIN_VS_PLANES_USER_INPUTS_H

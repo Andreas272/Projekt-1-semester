@@ -8,13 +8,13 @@
  * @param previous_array In this array there is the lastest city visited before arriving at the current city.
  * @param end The given end location.
  */
-void route_extractor(int previous_array[array_size],int end){
+void route_extractor(int previous_array[array_size], int end) {
     int route[array_size];  //This is to save the used route, before printing.
 
     //In this loop, we extract the route used to arrive at the end
     //location from the previous_array into the route array.
-    for(int i=0; i<array_size;i++){
-        if(i==0)
+    for (int i = 0; i < array_size; i++) {
+        if (i == 0)
             route[i] = end;
         else
             route[i] = previous_array[route[i - 1]];
@@ -23,8 +23,8 @@ void route_extractor(int previous_array[array_size],int end){
     //Here we print the route array, and because not all there spots in the array necessarily
     //get used, there is some if statements to ensure, that is do not print a lot of zeros.
     printf("\n\nThe fastest route is [ ");
-    for (int i=array_size-1;0 <= i;i--){
-        if(route[i] != route[i+1]) {
+    for (int i=array_size-1;i > -1;i--){
+        if(route[i] != route[i-1]) {
             printf("%d ",route[i]+1);
             if(i > 0){
                 printf("-> ");
@@ -42,7 +42,7 @@ void route_extractor(int previous_array[array_size],int end){
  * @param end The given end location
  * @return The fastest route in total minuts
  */
-int route_cal(int array[array_size][array_size], int start, int end) {
+int route_cal(int array[array_size][array_size], int start, int end, int units) {
 
     int result_time_array[array_size];  //This array will contain the fastest time from start to alle other locations.
     int previous_array[array_size];     //In this array there is the lastest city visited before arriving at the current city i.
@@ -77,12 +77,15 @@ int route_cal(int array[array_size][array_size], int start, int end) {
         }
     }
 
-    //The funktions for printing the used fastest route.
+    //The functions for printing the used fastest route.
     route_extractor(previous_array, end);
 
-    //takes the result time in min at devide it into hours and minut, and prints it.
-    int timer = result_time_array[end] / 60, min = result_time_array[end] % 60;
-    printf("Time to reach end station by train: %dh:%dmin\n", timer, min);
+    //result time is calculated in hours and minutes and printed.
+        int hours = result_time_array[end] / 60, mins = result_time_array[end] % 60;
+        printf("Time to reach end station by train: %dh:%dmin\n", hours, mins);
+
+
+
 
     //returns the fastest route to given location.
     return result_time_array[end];

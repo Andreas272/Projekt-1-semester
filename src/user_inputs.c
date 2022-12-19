@@ -9,6 +9,8 @@
  * @param arrival is the destination in the network
  */
 void user_inputs (int *departure, int *arrival) {
+    print_line();
+    printf("The available citys, 1 - %d\n",array_size);
     printf("\nInput user starting city>");
     scanf("%d", departure);
 
@@ -29,6 +31,34 @@ int ask_action(){
     printf("\tRerun fastest route calculation(1)\n");
     printf("\tChange route time(2)\n");
     printf("\tPrint time array(3)\n");
+    printf(">");
+    scanf("%d", &scan);
+
+    return scan;
+}
+
+
+int ask_units(){
+    int scan;
+    print_line();
+    printf("What is the time unit of the supplied data?\n");
+    printf("\tMinutes (1)\n");
+    printf("\tHours(2)\n");
+    printf(">");
+    scanf("%d", &scan);
+
+    return scan;
+}
+
+int data_selector(){
+    int scan;
+    print_line();
+    printf("Which data file do you want to use?\n");
+    printf("\t my_data.txt (0)\n");
+    printf("\t data_11Station_minutes.txt (1)\n");
+    printf("\t data_11Station_hours.txt (2)\n");
+    printf("\t data_6Station_hours.txt (3)\n");
+    printf("\t data_4Station_hours.txt (4)\n");
     printf(">");
     scanf("%d", &scan);
 

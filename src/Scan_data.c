@@ -8,16 +8,34 @@
  * @param size_of_array; This is used for calculation in the function, and is the size of the array,
  * based on the amount of stations included
  */
-void data_reader (int time_array[array_size][array_size],int size_of_array) {
-    int start, end, time;
+FILE *open_file(int choose_file){
     FILE *in_file;   //Here we make a file pointer
-    in_file = fopen("data.txt", "r");   //Opens the file data.txt in read only mode.
 
+    //Opens the specified txt-file in read only mode.
+    if(choose_file==0)
+        in_file = fopen("my_data.txt", "r");
+    if(choose_file==1)
+        in_file = fopen("data_11Stations_minutes.txt", "r");
+    if(choose_file==2)
+        in_file = fopen("data_11Stations_hours.txt", "r");
+    if(choose_file==3)
+        in_file = fopen("data_6Stations_hours.txt", "r");
+    if(choose_file==4)
+        in_file = fopen("data_4Stations_hours.txt", "r");
 
     if (in_file == NULL) {  //Tests if the file exists, and exit if it doesn't
         printf("Error! Could not open file\n");
         exit(EXIT_FAILURE);
-    } else {
+    }
+    return in_file;
+}
+
+
+void data_reader(int time_array[array_size][array_size],int size_of_array, int units,int choose_file) {
+    int start, end, time;
+
+    FILE *in_file= open_file(choose_file);
+
         //This for loop, fills the array with 0's, such that we know later, which routes is unusable.
         for (int i = 0; i < size_of_array; ++i) {
             for (int j = 0; j < size_of_array; ++j) {
@@ -28,10 +46,13 @@ void data_reader (int time_array[array_size][array_size],int size_of_array) {
         //reads the file, and fills in the routes, and the time is takes
         //based on the starting point, and ending point.
         while(fscanf(in_file, "%d,%d,%d",&start,&end, &time) != EOF){
+            if(units==1)
             time_array[start-1][end-1] = time;//Have to -1, because the array starts at 0 and not 1.
+            else
+                time_array[start-1][end-1] = time*60; //If the durations are given in hours
         }
         fclose(in_file); //Here we close the file back down again.
-    }
+
 }
 
 
@@ -55,14 +76,11 @@ void print_array(int time_array[array_size][array_size],int size_of_array){
 /** File_array_size is used to figure out the number of stations in the train network
  * @return file_size_array which is the number of stations in the text file. This is used in the dimensions of the 2D array
  */
-int file_array_size(){
+int file_array_size(int choose_file){
     int start, end, discard, file_array_size = 0;
-    FILE *in_file;
-    in_file = fopen("data.txt", "r"); // Opens the file data.txt in read only mode.
-    if (in_file == NULL) {
-        printf("Error! Could not open file\n"); exit(EXIT_FAILURE);
-    }
-    else {
+
+    FILE *in_file= open_file(choose_file);
+
         //While keep going until end of file (EOF)
         while(fscanf(in_file, "%d,%d,%d",&start,&end, &discard) != EOF){
             int i = 0, j = 0;
@@ -70,7 +88,7 @@ int file_array_size(){
             j = compere_int(i,file_array_size);
             file_array_size = j;
         }
-    }
+
     fclose(in_file);        //Here we close the file back down again.
     return file_array_size; //Return the size of the array.
 }
@@ -84,7 +102,7 @@ int file_array_size(){
 void plane_reader (int time_array[array_size][array_size],int size_of_array) {
 
     FILE *in_file;//Here we make a file pointer
-    in_file = fopen("data_2.txt", "r"); // Opens the .txt file in read only mode.
+    in_file = fopen("data_11Stations_a_hours.txt", "r"); // Opens the .txt file in read only mode.
 
     if (in_file == NULL) {  //Tests if the file exists, and exit if it doesn't
         printf("Error! Could not open file\n");
@@ -111,7 +129,7 @@ void plane_reader (int time_array[array_size][array_size],int size_of_array) {
 
 
 
-//This is a helping funktion for comparison of to ints.
+//This is a helping function for comparison of to ints.
 int compere_int(int a, int b){
     if(a > b)
         return a; //a is larger
