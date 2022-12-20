@@ -54,9 +54,11 @@ void data_reader(int time_array[array_size][array_size],int size_of_array, int u
         //based on the starting point, and ending point.
         while(fscanf(in_file, "%d,%d,%d",&start,&end, &time) != EOF){
             if(units==1)
-            time_array[start-1][end-1] = time;//Have to -1, because the array starts at 0 and not 1.
+                //Have to -1, because the array starts at 0 and not 1.
+                time_array[start-1][end-1] = time;
             else
-                time_array[start-1][end-1] = time*60; //If the durations are given in hours
+                //If the durations are given in hours
+                time_array[start-1][end-1] = time*60; 
         }
         fclose(in_file); //Here we close the file back down again.
 
