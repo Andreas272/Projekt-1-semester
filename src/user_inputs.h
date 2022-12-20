@@ -7,7 +7,7 @@
 
 //Start, end and user_inputs can be used across files in this project
 //extern int start, end;
-void user_inputs(int *departure, int *arrival);
+void user_inputs(int *origin, int *destination);
 int ask_action();
 int ask_units();
 int data_selector();

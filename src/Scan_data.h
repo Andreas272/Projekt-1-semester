@@ -7,7 +7,7 @@
 
 //Makes the variable usable in other files that have included Scan_data.h//
 extern int array_size;
-int compere_int(int a, int b);
+int max_value(int a, int b);
 int file_array_size(int choose_file);
 void data_reader(int time_array[array_size][array_size],int size_of_array, int units,int choose_file);
 void print_array(int time_array[array_size][array_size],int size_of_array);

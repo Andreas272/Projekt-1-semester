@@ -31,6 +31,13 @@ FILE *open_file(int choose_file){
 }
 
 
+/**
+ * Reads data from data fil and into a 2D-array
+ * @param time_array is the 2D array to represent the data
+ * @param size_of_array is the number of stations.
+ * @param units units is either 1 for miutes or 2 for hours
+ * @param choose_file is either 0,1,2,3 or 4. Depending on the value, a specific data file ins opened.
+ */
 void data_reader(int time_array[array_size][array_size],int size_of_array, int units,int choose_file) {
     int start, end, time;
 
@@ -83,9 +90,10 @@ int file_array_size(int choose_file){
 
         //While keep going until end of file (EOF)
         while(fscanf(in_file, "%d,%d,%d",&start,&end, &discard) != EOF){
-            int i = 0, j = 0;
-            i = compere_int(start,end);
-            j = compere_int(i,file_array_size);
+            int i , j;
+
+            i = max_value(start, end);
+            j = max_value(i, file_array_size);
             file_array_size = j;
         }
 
@@ -102,7 +110,7 @@ int file_array_size(int choose_file){
 void plane_reader (int time_array[array_size][array_size],int size_of_array) {
 
     FILE *in_file;//Here we make a file pointer
-    in_file = fopen("data_11Stations_a_hours.txt", "r"); // Opens the .txt file in read only mode.
+    in_file = fopen("my_data.txt", "r"); // Opens the .txt file in read only mode.
 
     if (in_file == NULL) {  //Tests if the file exists, and exit if it doesn't
         printf("Error! Could not open file\n");
@@ -129,8 +137,13 @@ void plane_reader (int time_array[array_size][array_size],int size_of_array) {
 
 
 
-//This is a helping function for comparison of to ints.
-int compere_int(int a, int b){
+/**
+ * This is a helping function for comparison of two ints.
+ * @param a is the one int
+ * @param b is the other int
+ * @return the larger of a and b. If a=b, b is returned.
+ */
+int max_value(int a, int b){
     if(a > b)
         return a; //a is larger
     else
