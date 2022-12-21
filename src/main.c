@@ -13,7 +13,8 @@ int main(void) {
 
     //Selection of data file
     choose_file=data_selector();
-    units=ask_units();
+
+    units=ask_units(choose_file);
 
     //This function finds the array size.
     array_size = file_array_size(choose_file);
@@ -90,6 +91,7 @@ int main(void) {
             printf("Plane time array:");
             print_array(plane_time_array,array_size);
         }
+
         else{
             printf("Invalid input. The program will terminate");
             exit(EXIT_FAILURE);

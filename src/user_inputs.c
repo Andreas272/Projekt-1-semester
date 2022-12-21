@@ -69,28 +69,42 @@ int ask_action(){
  * Asks the user for time units in data file
  * @return the user input as an int
  */
-int ask_units(){
+int ask_units(int choose_file) {
     int scan;
-    print_line();
-    printf("What is the time unit of the supplied data?\n");
-    printf("\t(1) Minutes\n");
-    printf("\t(2) Hours\n");
-    printf(">");
-    scanf("%d", &scan);
 
-    if(!((scan==1) || (scan==2)))
+    if (choose_file == 0) {
+
+        // Define units of users data
+        print_line();
+        printf("What is the time unit of the supplied data?\n");
+        printf("\t(1) Minutes\n");
+        printf("\t(2) Hours\n");
+        printf(">");
+        scanf("%d", &scan);
+
+
+        return scan;
+    }
+
+    else if (choose_file == 1){
+        scan = 1;
+        return scan;
+    }
+    else if (choose_file == 2 || choose_file == 3 || choose_file == 4)
     {
+        scan = 2;
+        return scan;
+    }
+        else {
         printf("Invalid input. The program will terminate");
         exit(EXIT_FAILURE);
-    }
-    return scan;
-}
+        }}
 
 /**
  * Asks the user for which data set to use
  * @return the user intput as an int
  */
-int data_selector(){
+int data_selector() {
     int scan;
     print_line();
     printf("Which data file do you want to use?\n");
@@ -102,11 +116,9 @@ int data_selector(){
     printf(">");
     scanf("%d", &scan);
 
-   if(!((scan==0)|| (scan==1) || (scan==2) || (scan ==3) || (scan ==4)))
-   {
-       printf("Invalid input. The program will terminate");
-       exit(EXIT_FAILURE);
-   }
-
+    if (!((scan == 0) || (scan == 1) || (scan == 2) || (scan == 3) || (scan == 4))) {
+        printf("Invalid input. The program will terminate");
+        exit(EXIT_FAILURE);
+    }
     return scan;
 }

@@ -144,7 +144,7 @@ void change_route_time(int array[array_size][array_size]){
     }
 
     //Scans for user input on starting station.
-    printf("\n\nChose on of the stations above > ");
+    printf("\n\nChoose on of the stations above > ");
     scanf("%d", &start);
     start-=1;
     print_line();
@@ -152,7 +152,7 @@ void change_route_time(int array[array_size][array_size]){
     // Termination of program if start is invalid
     int station_array[array_size];
     for(int i=0; i<array_size; i++){
-        station_array[i]= i + 1;
+        station_array[i] = i;
     }
     int presence_start = 0;
 
@@ -179,7 +179,7 @@ void change_route_time(int array[array_size][array_size]){
     }
 
     //Scans for user input on end station.
-    printf("\n\nChose on of the stations above > ");
+    printf("\n\nChoose on of the stations above > ");
     scanf("%d", &end);
     end -= 1;
     print_line();
@@ -218,7 +218,6 @@ void change_route_time(int array[array_size][array_size]){
     array[start][end] = change;
     array[end][start] = change;
 
-    print_line();
 }
 
 //Help function just for printing a dividing line.

@@ -112,7 +112,7 @@ int file_array_size(int choose_file){
 void plane_reader (int time_array[array_size][array_size],int size_of_array) {
 
     FILE *in_file;//Here we make a file pointer
-    in_file = fopen("my_data.txt", "r"); // Opens the .txt file in read only mode.
+    in_file = fopen("plane_data.txt", "r"); // Opens the .txt file in read only mode.
 
     if (in_file == NULL) {  //Tests if the file exists, and exit if it doesn't
         printf("Error! Could not open file\n");
