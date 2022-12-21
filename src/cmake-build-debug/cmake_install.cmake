@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/admin/CLionProjects/P1---train-vs-planes/src
+# Install script for directory: C:/Users/admin/Documents/GitHub/P1---train-vs-planes/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/admin/CLionProjects/P1---train-vs-planes/src/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/admin/Documents/GitHub/P1---train-vs-planes/src/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

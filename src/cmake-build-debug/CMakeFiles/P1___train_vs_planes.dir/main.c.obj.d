@@ -1,5 +1,5 @@
 CMakeFiles/P1___train_vs_planes.dir/main.c.obj: \
- C:\Users\admin\CLionProjects\P1---train-vs-planes\src\main.c \
+ C:\Users\admin\Documents\GitHub\P1---train-vs-planes\src\main.c \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
@@ -22,6 +22,6 @@ CMakeFiles/P1___train_vs_planes.dir/main.c.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/errno.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/x86_64-w64-mingw32/include/math.h \
- C:\Users\admin\CLionProjects\P1---train-vs-planes\src\Scan_data.h \
- C:\Users\admin\CLionProjects\P1---train-vs-planes\src\route_cal.h \
- C:\Users\admin\CLionProjects\P1---train-vs-planes\src\user_inputs.h
+ C:\Users\admin\Documents\GitHub\P1---train-vs-planes\src\Scan_data.h \
+ C:\Users\admin\Documents\GitHub\P1---train-vs-planes\src\route_cal.h \
+ C:\Users\admin\Documents\GitHub\P1---train-vs-planes\src\user_inputs.h
