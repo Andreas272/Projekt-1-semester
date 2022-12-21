@@ -26,6 +26,9 @@ Depaturestation, arrivalstation, duration of travel.
 
 When the option of inputting own data in my_data.txt is used, then the user should be aware that they need to specify if the data is in minutes or hours when asked.
 
+It is also important to notice that the file plane_txt should be used when inputting own flight data. The format of the data should also be in the above mentioned format.
+
+
 data_4Stations_hours.txt is based on imaginary data. <br />
 data_6Stations_hours.txt is based on imaginary data. <br />
 data_11Stations_hours.txt is based on imaginary data. <br />

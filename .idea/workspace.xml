@@ -21,7 +21,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="918a6e82-b1ce-43a9-b894-af4069f7fa17" name="Changes" comment="updated 191222" />
+    <list default="true" id="918a6e82-b1ce-43a9-b894-af4069f7fa17" name="Changes" comment="updated 191222">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +68,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="P1___train_vs_planes" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/src" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P1___train_vs_planes" TARGET_NAME="P1___train_vs_planes" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P1___train_vs_planes" RUN_TARGET_NAME="P1___train_vs_planes">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -88,6 +97,7 @@
       <workItem from="1671583617364" duration="1050000" />
       <workItem from="1671584704089" duration="1000" />
       <workItem from="1671585128147" duration="1000" />
+      <workItem from="1671586760416" duration="321000" />
     </task>
     <task id="LOCAL-00001" summary="updated 191222">
       <created>1671453240737</created>
