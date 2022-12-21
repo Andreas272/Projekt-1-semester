@@ -1,3 +1,0 @@
-C:/Users/admin/CLionProjects/P1---train-vs-planes/src/cmake-build-debug/CMakeFiles/P1___train_vs_planes.dir
-C:/Users/admin/CLionProjects/P1---train-vs-planes/src/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/admin/CLionProjects/P1---train-vs-planes/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
