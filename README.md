@@ -22,7 +22,9 @@ Information on datafiles:
 my_data allows the user to input their own data in the text file. 
 
 When creating additional datafiles it is important that the format of the files are kept the same as the existing ones. Therefore the data should be appended to the files with the following format: 
-Depaturestation,arrivalstation.duration of travel.
+Depaturestation, arrivalstation, duration of travel.
+
+When the option of inputting own data in my_data.txt is used, then the user should be aware that they need to specify if the data is in minutes or hours when asked.
 
 data_4Stations_hours.txt is based on imaginary data. <br />
 data_6Stations_hours.txt is based on imaginary data. <br />
