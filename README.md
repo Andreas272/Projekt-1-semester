@@ -5,17 +5,22 @@ Before running the code change the working directory to "src", else can't the sc
 
 User manuel: 
 
-Step 1. Input the wanted starting location.
+Step 1. Choose a data file to be used, if my_data.txt is chosen a unit have to be picked.
 
-Step 2. Input the wanted end location.
+Step 2. Input the wanted starting location.
 
-Step 3. Watch the magic happen ;)
+Step 3. Input the wanted end location.
+
+Step 4. Watch the magic happen ;)
 
 Step 4. Make the Choice, 
 0 = Exit program, 
 1 = Rerun fastest route cal, 
 2 = Change route, 
 3 = print array. 
+
+
+
 
 Information on datafiles:
 
